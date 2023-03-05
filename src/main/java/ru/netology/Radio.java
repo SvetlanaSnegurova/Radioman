@@ -5,13 +5,15 @@ public class Radio {
     private int currentVolume;
     private int maxStation;
 
-    public Radio () {
+    public Radio() {
         maxStation = 9;
     }
-    public Radio (int countStation) {
+
+    public Radio(int countStation) {
         maxStation = countStation - 1;
 
- }
+    }
+
     public int getCurrentStation() {
 
         return currentStation;
@@ -55,7 +57,6 @@ public class Radio {
             currentStation--;
         }
         else {
-
             currentStation = maxStation;
         }
     }
@@ -65,6 +66,7 @@ public class Radio {
             currentVolume = currentVolume + 1;
         }
     }
+
     public void prevVolume() {
         if (currentVolume != 0) {
             currentVolume = currentVolume - 1;

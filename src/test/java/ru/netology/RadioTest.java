@@ -29,10 +29,10 @@ public class RadioTest {
     @Test
     public void nextCurrentStation() {
         Radio radio = new Radio(20);
-        radio.setCurrentStation(9);
+        radio.setCurrentStation(19);
 
         radio.nextStation();
-        int expected = 10;
+        int expected = 0;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
@@ -94,10 +94,10 @@ public class RadioTest {
     @Test
     public void nextCurrentVolume() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(8);
+        radio.setCurrentVolume(100);
 
         radio.nextVolume();
-        int expected = 9;
+        int expected = 100;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
