@@ -38,10 +38,10 @@ public class RadioTest {
     @Test
     public void nextCurrentStation() {
         ru.netology.Radio radio = new ru.netology.Radio();
-        radio.setCurrentStation(0);
+        radio.setCurrentStation(8);
 
         radio.nextStation();
-        int expected = 1;
+        int expected = 9;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
@@ -101,12 +101,12 @@ public class RadioTest {
     }
 
     @Test
-    public void settingNextCurrentVolume() {
+    public void nextCurrentVolume() {
         ru.netology.Radio radio = new ru.netology.Radio();
-        radio.setCurrentVolume(1);
+        radio.setCurrentVolume(8);
 
         radio.nextVolume();
-        int expected = 2;
+        int expected = 9;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
