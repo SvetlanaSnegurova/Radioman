@@ -7,29 +7,29 @@ public class RadioTest {
 
     @Test
     public void setUpNumberStation() {
-        ru.netology.Radio radio = new ru.netology.Radio();
+        Radio radio = new Radio(20);
 
-        radio.setCurrentStation(6);
-        int expected = 6;
+        radio.setCurrentStation(15);
+        int expected = 15;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void settingStationUnderMinStation() {
-        ru.netology.Radio radio = new ru.netology.Radio();
+        Radio radio = new Radio(20);
         radio.setCurrentStation(-1);
 
         radio.prevStation();
-        int expected = 9;
+        int expected = 19;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void nextCurrentStation() {
-        ru.netology.Radio radio = new ru.netology.Radio();
-        radio.setCurrentStation(9);
+        Radio radio = new Radio(20);
+        radio.setCurrentStation(19);
 
         radio.nextStation();
         int expected = 0;
@@ -39,7 +39,7 @@ public class RadioTest {
 
     @Test
     public void prevCurrentStation() {
-        ru.netology.Radio radio = new ru.netology.Radio();
+        Radio radio = new Radio(20);
         radio.setCurrentStation(9);
 
         radio.prevStation();
@@ -50,8 +50,8 @@ public class RadioTest {
 
     @Test
     public void increateNextOverMaxStation() {
-        ru.netology.Radio radio = new ru.netology.Radio();
-        radio.setCurrentStation(10);
+        Radio radio = new Radio(20);
+        radio.setCurrentStation(20);
 
         radio.nextStation();
         int expected = 1;
@@ -61,18 +61,18 @@ public class RadioTest {
 
     @Test
     public void prevUnderMinStation() {
-        ru.netology.Radio radio = new ru.netology.Radio();
+        Radio radio = new Radio(20);
         radio.setCurrentStation(0);
 
         radio.prevStation();
-        int expected = 9;
+        int expected = 19;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void settingValidVolume() {
-        ru.netology.Radio radio = new ru.netology.Radio();
+        Radio radio = new Radio();
         radio.setCurrentVolume(5);
 
         int expected = 5;
@@ -82,7 +82,7 @@ public class RadioTest {
 
     @Test
     public void settingPrevMinVolume() {
-        ru.netology.Radio radio = new ru.netology.Radio();
+        Radio radio = new Radio();
         radio.setCurrentVolume(-1);
 
         radio.prevVolume();
@@ -93,19 +93,19 @@ public class RadioTest {
 
     @Test
     public void nextCurrentVolume() {
-        ru.netology.Radio radio = new ru.netology.Radio();
-        radio.setCurrentVolume(8);
+        Radio radio = new Radio();
+        radio.setCurrentVolume(100);
 
         radio.nextVolume();
-        int expected = 9;
+        int expected = 100;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void settingOverMaxVolume() {
-        ru.netology.Radio radio = new ru.netology.Radio();
-        radio.setCurrentVolume(11);
+        Radio radio = new Radio();
+        radio.setCurrentVolume(110);
 
         radio.nextVolume();
         int expected = 1;
@@ -115,8 +115,8 @@ public class RadioTest {
 
     @Test
     public void settingUnderMinVolume() {
-        ru.netology.Radio radio = new ru.netology.Radio();
-        radio.setCurrentVolume(0);
+        Radio radio = new Radio();
+        radio.setCurrentVolume(-1);
 
         radio.prevVolume();
         int expected = 0;
@@ -127,11 +127,11 @@ public class RadioTest {
 
     @Test
     public void prevCurrentVolume() {
-        ru.netology.Radio radio = new ru.netology.Radio();
-        radio.setCurrentVolume(8);
+        Radio radio = new Radio();
+        radio.setCurrentVolume(99);
 
         radio.prevVolume();
-        int expected = 7;
+        int expected = 98;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
