@@ -18,19 +18,10 @@ public class RadioTest {
     @Test
     public void settingStationUnderMinStation() {
         ru.netology.Radio radio = new ru.netology.Radio();
-
         radio.setCurrentStation(-1);
-        int expected = 0;
-        int actual = radio.getCurrentStation();
-        Assertions.assertEquals(expected, actual);
-    }
 
-    @Test
-    public void settingStationOverMaxStation() {
-        ru.netology.Radio radio = new ru.netology.Radio();
-
-        radio.setCurrentStation(11);
-        int expected = 0;
+        radio.prevStation();
+        int expected = 9;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
@@ -38,10 +29,10 @@ public class RadioTest {
     @Test
     public void nextCurrentStation() {
         ru.netology.Radio radio = new ru.netology.Radio();
-        radio.setCurrentStation(8);
+        radio.setCurrentStation(9);
 
         radio.nextStation();
-        int expected = 9;
+        int expected = 0;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }

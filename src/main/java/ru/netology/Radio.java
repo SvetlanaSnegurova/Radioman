@@ -58,7 +58,6 @@ public class Radio {
             currentVolume = currentVolume + 1;
         }
     }
-
     public void prevVolume() {
         if (currentVolume != 0) {
             currentVolume = currentVolume - 1;
