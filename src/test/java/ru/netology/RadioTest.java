@@ -112,7 +112,16 @@ public class RadioTest {
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+    @Test
+    public void settingMaxVolume() {
+        ru.netology.Radio radio = new ru.netology.Radio();
+        radio.setCurrentVolume(10);
 
+        radio.nextVolume();
+        int expected = 10;
+        int actual = radio.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+    }
     @Test
     public void settingUnderMinVolume() {
         ru.netology.Radio radio = new ru.netology.Radio();
